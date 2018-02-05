@@ -4,13 +4,17 @@
     "build:styles": "node-sass --source-map true --output-style compressed src/styles/giphy.scss public/assets/styles/output.css && cleancss -o public/assets/styles/output.min.css public/assets/styles/output.css ",
     "watch:styles": "node-sass --watch src/styles/giphy.scss public/assets/styles/output.css",
     "browser": "browser-sync start --server ./public --files ./**",
-    "watch": "npm-run-all --parallel browser watch:styles" 
+    "watch": "npm-run-all --parallel browser watch:styles",
+    "build:scripts": "rollup --config",
+    "watch:scripts" : "rollup --config --watch",
+    "build": "npm-run-all --parallel build:*"
   },
   "dependencies": {
     "browser-sync": "^2.23.6",
     "node-sass": "^4.7.2",
     "npm-run-all": "^4.1.2",
     "query-string": "^5.0.1",
+    "rollup": "^0.55.3",
     "sanitize.css": "^5.0.0"
   }
 }
